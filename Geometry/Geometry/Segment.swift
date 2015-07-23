@@ -1,12 +1,6 @@
 import Foundation
 import UIKit
 
-public extension CGPoint {
-    func distance(point: CGPoint) -> CGFloat {
-        return sqrt((point.y - y) * (point.y - y) + (point.x - x) * (point.x - x))
-    }
-}
-
 public struct Segment {
     var p1: CGPoint
     var p2: CGPoint
@@ -47,5 +41,58 @@ public struct Segment {
     
     public func contains(point: CGPoint) -> Bool {
         return point.distance(p1) + point.distance(p2) == self.length
+    }
+    
+    public func crossPoint(another: Segment) -> CGPoint? {
+        let x1 = p1.x, y1 = p1.y
+        let x2 = p2.x, y2 = p2.y
+        let x3 = another.p1.x, y3 = another.p1.y
+        let x4 = another.p2.x, y4 = another.p2.y
+        
+        let x: CGFloat, y: CGFloat
+        
+        if (y2 == y1) && (y4 == y3) || (x2 == x1) && (x4 == x3) {
+            return nil
+        }
+        else if (y2 == y1) {
+            y = y1
+            x = x3 + (y1 - y3) * (x4 - x3) / (y4 - y3)
+        }
+        else if (y4 == y3) {
+            y = y3
+            x = x1 + (y3 - y1) * (x2 - x1) / (y2 - y1)
+        }
+        else if (x4 == x3) {
+            x = x3
+            y = y1 + (y2 - y1) * (x3 - x1) / (x2 - x1)
+        }
+        else if (x2 == x1) {
+            x = x2
+            y = y3 + (y4 - y3) * (x2 - x3) / (x4 - x3)
+        }
+        else if (x4 - x3) * (y2 - y1) == (y4 - y3) * (x2 - x1) {
+            return nil
+        }
+        else {
+            let a = (y2 - y1) / (x2 - x1)
+            let c = (y4 - y3) / (x4 - x3)
+            let b = (x2 * y1 - x1 * y2) / (x2 - x1)
+            let d = (x4 * y3 - x3 * y4) / (x4 - x3)
+            
+            x = (d - b) / (a - c)
+            y = a * x + b
+        }
+        
+        let point = CGPointMake(x, y)
+        if self.contains(point) && another.contains(point) {
+            return point
+        }
+        
+        return nil
+    }
+    
+    // Get the point at the distance of p1
+    public func pointByDistance(distance: CGFloat) -> CGPoint {
+        return CGPointMake(p1.x + (distance / self.length) * (p2.x - p1.x), p1.y + (distance / self.length) * (p2.y - p2.x))
     }
 }

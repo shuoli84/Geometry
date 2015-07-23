@@ -14,6 +14,8 @@
 		9C550B891B5FF9D500081FC9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C550B871B5FF9D500081FC9 /* LaunchScreen.xib */; };
 		9C550B951B5FF9D500081FC9 /* GeometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C550B941B5FF9D500081FC9 /* GeometryTests.swift */; };
 		9C550B9F1B5FF9E900081FC9 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C550B9E1B5FF9E900081FC9 /* Segment.swift */; };
+		9C550BA11B606B8800081FC9 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C550BA01B606B8800081FC9 /* CGPoint.swift */; };
+		9C550BA31B606BAC00081FC9 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C550BA21B606BAC00081FC9 /* CGRect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		9C550B931B5FF9D500081FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C550B941B5FF9D500081FC9 /* GeometryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryTests.swift; sourceTree = "<group>"; };
 		9C550B9E1B5FF9E900081FC9 /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
+		9C550BA01B606B8800081FC9 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		9C550BA21B606BAC00081FC9 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				9C550B871B5FF9D500081FC9 /* LaunchScreen.xib */,
 				9C550B7C1B5FF9D500081FC9 /* Supporting Files */,
 				9C550B9E1B5FF9E900081FC9 /* Segment.swift */,
+				9C550BA01B606B8800081FC9 /* CGPoint.swift */,
+				9C550BA21B606BAC00081FC9 /* CGRect.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -215,7 +221,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C550BA11B606B8800081FC9 /* CGPoint.swift in Sources */,
 				9C550B811B5FF9D500081FC9 /* ViewController.swift in Sources */,
+				9C550BA31B606BAC00081FC9 /* CGRect.swift in Sources */,
 				9C550B9F1B5FF9E900081FC9 /* Segment.swift in Sources */,
 				9C550B7F1B5FF9D500081FC9 /* AppDelegate.swift in Sources */,
 			);
