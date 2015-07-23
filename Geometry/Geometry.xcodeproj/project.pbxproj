@@ -16,6 +16,8 @@
 		9C550B9F1B5FF9E900081FC9 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C550B9E1B5FF9E900081FC9 /* Segment.swift */; };
 		9C550BA11B606B8800081FC9 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C550BA01B606B8800081FC9 /* CGPoint.swift */; };
 		9C550BA31B606BAC00081FC9 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C550BA21B606BAC00081FC9 /* CGRect.swift */; };
+		9C57E08E1B6091E5003042E4 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57E08D1B6091E5003042E4 /* ChatBubble.swift */; };
+		9C57E0901B60B622003042E4 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57E08F1B60B622003042E4 /* Triangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		9C550B9E1B5FF9E900081FC9 /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 		9C550BA01B606B8800081FC9 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		9C550BA21B606BAC00081FC9 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		9C57E08D1B6091E5003042E4 /* ChatBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
+		9C57E08F1B60B622003042E4 /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 				9C550B9E1B5FF9E900081FC9 /* Segment.swift */,
 				9C550BA01B606B8800081FC9 /* CGPoint.swift */,
 				9C550BA21B606BAC00081FC9 /* CGRect.swift */,
+				9C57E08D1B6091E5003042E4 /* ChatBubble.swift */,
+				9C57E08F1B60B622003042E4 /* Triangle.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -222,9 +228,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C550BA11B606B8800081FC9 /* CGPoint.swift in Sources */,
+				9C57E08E1B6091E5003042E4 /* ChatBubble.swift in Sources */,
 				9C550B811B5FF9D500081FC9 /* ViewController.swift in Sources */,
 				9C550BA31B606BAC00081FC9 /* CGRect.swift in Sources */,
 				9C550B9F1B5FF9E900081FC9 /* Segment.swift in Sources */,
+				9C57E0901B60B622003042E4 /* Triangle.swift in Sources */,
 				9C550B7F1B5FF9D500081FC9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +429,7 @@
 				9C550B9A1B5FF9D500081FC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C550B9B1B5FF9D500081FC9 /* Build configuration list for PBXNativeTarget "GeometryTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +438,7 @@
 				9C550B9D1B5FF9D500081FC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

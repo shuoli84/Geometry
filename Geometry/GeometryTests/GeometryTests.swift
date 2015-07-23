@@ -11,6 +11,27 @@ import XCTest
 import Geometry
 
 class GeometryTests: XCTestCase {
+    // a b c d
+    // e f g h
+    // i j k l
+    // m n o p
+    let a = CGPointMake(0, 0)
+    let b = CGPointMake(10, 0)
+    let c = CGPointMake(20, 0)
+    let d = CGPointMake(30, 0)
+    let e = CGPointMake(0, 10)
+    let f = CGPointMake(10, 10)
+    let g = CGPointMake(20, 10)
+    let h = CGPointMake(30, 10)
+    let i = CGPointMake(0, 20)
+    let j = CGPointMake(10, 20)
+    let k = CGPointMake(20, 20)
+    let l = CGPointMake(30, 20)
+    let m = CGPointMake(0, 30)
+    let n = CGPointMake(10, 30)
+    let o = CGPointMake(20, 30)
+    let p = CGPointMake(30, 30)
+    
     func testSegment() {
         var s = Segment(p1: CGPointMake(0, 0), p2: CGPointMake(10, 0))
         XCTAssertEqual(s.project(CGPointMake(0, 10)), CGPointMake(0, 0))
@@ -28,23 +49,7 @@ class GeometryTests: XCTestCase {
         // e f g h
         // i j k l
         // m n o p
-        let a = CGPointMake(0, 0)
-        let b = CGPointMake(10, 0)
-        let c = CGPointMake(20, 0)
-        let d = CGPointMake(30, 0)
-        let e = CGPointMake(0, 10)
-        let f = CGPointMake(10, 10)
-        let g = CGPointMake(20, 10)
-        let h = CGPointMake(30, 10)
-        let i = CGPointMake(0, 20)
-        let j = CGPointMake(10, 20)
-        let k = CGPointMake(20, 20)
-        let l = CGPointMake(30, 20)
-        let m = CGPointMake(0, 30)
-        let n = CGPointMake(10, 30)
-        let o = CGPointMake(20, 30)
-        let p = CGPointMake(30, 30)
-        
+       
         let am = Segment(p1:a, p2:m)
         let dp = Segment(p1:d, p2:p)
         
@@ -56,6 +61,10 @@ class GeometryTests: XCTestCase {
         let eo = Segment(p1:e, p2:o)
         let dm = Segment(p1:d, p2:m)
         XCTAssertEqual(eo.crossPoint(dm)!, j)
+        
+        let ad = Segment(p1:a, p2:d)
+        XCTAssertEqual(am.pointByDistance(10), e)
+        XCTAssertEqual(ad.pointByDistance(10), b)
     }
     
     func testRect() {
@@ -80,5 +89,30 @@ class GeometryTests: XCTestCase {
         XCTAssertEqual(rect.closestPointTo(CGPointMake(30, 0)), CGPointMake(20, 10))
         XCTAssertEqual(rect.closestPointTo(CGPointMake(0, 30)), CGPointMake(10, 20))
         XCTAssertEqual(rect.closestPointTo(CGPointMake(30, 30)), CGPointMake(20, 20))
+    }
+    
+    func testTriangle() {
+        // a b c d
+        // e f g h
+        // i j k l
+        // m n o p
+        
+        let t = Triangle(p1: a, p2: i, p3: h)
+        println("\([a.distance(i), i.distance(h), h.distance(a))")
+        println("\(t.perimeter)")
+        XCTAssertTrue(abs(t.area - 300) < 0.000001)
+    }
+    
+    func testBubbleTail() {
+        // a b c d
+        // e f g h
+        // i j k l
+        // m n o p
+     
+        println("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), a, 5))")
+        println("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), b, 5))")
+        println("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), c, 5))")
+        println("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), d, 5))")
+        println("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), h, 5))")
     }
 }

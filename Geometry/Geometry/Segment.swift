@@ -1,9 +1,15 @@
 import Foundation
 import UIKit
 
-public struct Segment {
+public struct Segment: Printable {
     var p1: CGPoint
     var p2: CGPoint
+    
+    public var description: String {
+        get {
+            return "\(NSStringFromCGPoint(p1)) -- \(NSStringFromCGPoint(p2))"
+        }
+    }
     
     public init(p1: CGPoint, p2: CGPoint) {
         self.p1 = p1
@@ -92,7 +98,26 @@ public struct Segment {
     }
     
     // Get the point at the distance of p1
-    public func pointByDistance(distance: CGFloat) -> CGPoint {
-        return CGPointMake(p1.x + (distance / self.length) * (p2.x - p1.x), p1.y + (distance / self.length) * (p2.y - p2.x))
+    public func pointByDistance(var distance: CGFloat, limitOnSegment: Bool = true) -> CGPoint {
+        if limitOnSegment {
+            distance = min(max(distance, 0), length)
+        }
+        
+        return CGPointMake(p1.x + (distance / self.length) * (p2.x - p1.x), p1.y + (distance / self.length) * (p2.y - p1.y))
+    }
+    
+    public func segmentByDistance(distance: CGFloat, offset: CGFloat = 0) -> Segment {
+        return Segment(p1: pointByDistance(0), p2: pointByDistance(distance + offset))
+    }
+    
+    public func split(point: CGPoint, allowEmpty: Bool = false) -> [Segment] {
+        if contains(point) {
+            let segments = [Segment(p1: p1, p2: point), Segment(p1: point, p2: p2)]
+            if !allowEmpty {
+                return segments.filter {$0.length > 0}
+            }
+            return segments
+        }
+        return []
     }
 }
