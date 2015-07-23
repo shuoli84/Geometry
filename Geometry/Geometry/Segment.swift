@@ -2,8 +2,8 @@ import Foundation
 import UIKit
 
 public struct Segment: Printable {
-    var p1: CGPoint
-    var p2: CGPoint
+    public var p1: CGPoint
+    public var p2: CGPoint
     
     public var description: String {
         get {
@@ -110,9 +110,9 @@ public struct Segment: Printable {
         return Segment(p1: pointByDistance(0), p2: pointByDistance(distance + offset))
     }
     
-    public func split(point: CGPoint, allowEmpty: Bool = false) -> [Segment] {
+    public func split(point: CGPoint, allowEmpty: Bool = false, startFromPoint: Bool = false) -> [Segment] {
         if contains(point) {
-            let segments = [Segment(p1: p1, p2: point), Segment(p1: point, p2: p2)]
+            let segments = [startFromPoint ? Segment(p1: point, p2: p1) : Segment(p1: p1, p2: point), Segment(p1: point, p2: p2)]
             if !allowEmpty {
                 return segments.filter {$0.length > 0}
             }

@@ -65,6 +65,10 @@ class GeometryTests: XCTestCase {
         let ad = Segment(p1:a, p2:d)
         XCTAssertEqual(am.pointByDistance(10), e)
         XCTAssertEqual(ad.pointByDistance(10), b)
+        
+        ad.split(c, startFromPoint: true).map { (item: Segment) in
+            XCTAssertEqual(item.p1, self.c)
+        }
     }
     
     func testRect() {
@@ -114,5 +118,16 @@ class GeometryTests: XCTestCase {
         println("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), c, 5))")
         println("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), d, 5))")
         println("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), h, 5))")
+        
+        println("*****************************************************")
+        println("*****************************************************")
+        println("*****************************************************")
+        
+        println("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), a, 3))")
+        println("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), b, 3))")
+        println("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), c, 3))")
+        println("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), d, 3))")
+        println("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), h, 3))")
+        println("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), CGPointMake(0, 15), 3))")
     }
 }
