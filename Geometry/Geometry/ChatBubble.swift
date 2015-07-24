@@ -29,6 +29,28 @@ public func tailTriangleForBubble(rect: CGRect, point: CGPoint, height: CGFloat)
     }
     else {
         let points = segments.map { $0.split(pointOnRect, startFromPoint: true).filter {$0.length > 0.0001}.map {$0.pointByDistance(distance)} }
-        return Triangle(p1: tailSegment.p2, p2:points[0][0], p3: points[1][0]) // FIXME no hard index
+        if points.count == 2 {
+            return Triangle(p1: tailSegment.p2, p2:points[0][0], p3: points[1][0]) // FIXME no hard index
+        }
+        return Triangle(p1: CGPointZero, p2: CGPointZero, p3: CGPointZero)
     }
+}
+
+// Container rect's origin should be 0
+public func positionRectInRectCloseToPoint(rectToBePlaced: CGRect, containerRect: CGRect, point: CGPoint, margin: CGFloat, space: CGFloat) -> CGRect {
+    let height = rectToBePlaced.height + space
+    var y: CGFloat
+    
+    if point.y - margin - space >= height {
+        y = point.y - space - height
+    }
+    else {
+        y = point.y + space
+    }
+    
+    y = min(max(y, margin), containerRect.height - margin - rectToBePlaced.height)
+    var x = point.x - rectToBePlaced.width / 2
+    
+    x = min(max(x, margin), containerRect.width - margin - rectToBePlaced.width)
+    return CGRectMake(x, y, rectToBePlaced.width, rectToBePlaced.height)
 }

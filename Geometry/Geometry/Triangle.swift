@@ -12,6 +12,15 @@ public struct Triangle: Printable {
         self.p3 = p3
     }
     
+    public func path() -> UIBezierPath {
+        var p = UIBezierPath()
+        p.moveToPoint(p1)
+        p.addLineToPoint(p2)
+        p.addLineToPoint(p3)
+        p.closePath()
+        return p
+    }
+    
     public var description: String {
         get {
             return "\([p1, p2, p3].map {NSStringFromCGPoint($0)})"
