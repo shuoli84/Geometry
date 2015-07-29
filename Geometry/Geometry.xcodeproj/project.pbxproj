@@ -20,6 +20,7 @@
 		9C57E08E1B6091E5003042E4 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57E08D1B6091E5003042E4 /* ChatBubble.swift */; };
 		9C57E0901B60B622003042E4 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57E08F1B60B622003042E4 /* Triangle.swift */; };
 		9C5C2AF61B68569700392118 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C2AF51B68569700392118 /* Circle.swift */; };
+		9C5C2AF81B689D3200392118 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C2AF71B689D3200392118 /* CGFloat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		9C57E08D1B6091E5003042E4 /* ChatBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		9C57E08F1B60B622003042E4 /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		9C5C2AF51B68569700392118 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		9C5C2AF71B689D3200392118 /* CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				9C57E08D1B6091E5003042E4 /* ChatBubble.swift */,
 				9C57E08F1B60B622003042E4 /* Triangle.swift */,
 				9C5C2AF51B68569700392118 /* Circle.swift */,
+				9C5C2AF71B689D3200392118 /* CGFloat.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C5C2AF81B689D3200392118 /* CGFloat.swift in Sources */,
 				9C550BA11B606B8800081FC9 /* CGPoint.swift in Sources */,
 				9C57E08E1B6091E5003042E4 /* ChatBubble.swift in Sources */,
 				9C5C2AF61B68569700392118 /* Circle.swift in Sources */,

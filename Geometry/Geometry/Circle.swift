@@ -46,5 +46,12 @@ public struct Circle: Printable {
         }
         return points
     }
-
+    
+    public func closestPointTo(point: CGPoint) -> CGPoint {
+        if point.distance(center) <= radius {
+            return point
+        }
+        
+        return Segment(p1: center, p2: point).pointByDistance(radius, limitOnSegment: true)
+    }
 }

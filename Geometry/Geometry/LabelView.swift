@@ -55,33 +55,11 @@ class LabelView: UIView {
             labelRect = positionRectInRectCloseToPoint(labelRect, self.bounds, point, 100, 10)
             
             let triangle = tailTriangleForBubble(labelRect, point, 10)
-            
-            /*
-                CABasicAnimation *fillColorAnimation = [CABasicAnimation animationWithKeyPath:@"fillColor"];
-                fillColorAnimation.duration = 1.5f;
-                fillColorAnimation.fromValue = (id)[[UIColor clearColor] CGColor];
-                fillColorAnimation.toValue = (id)[[UIColor yellowColor] CGColor];
-                fillColorAnimation.repeatCount = 10;
-                fillColorAnimation.autoreverses = YES;
-                [myShapeLayer addAnimation:fillColorAnimation forKey:@"fillColor"];
-            */
-            
+           
             let path = UIBezierPath(rect: labelRect).CGPath
-            var animation = CABasicAnimation(keyPath: "path")
-            
-            animation.duration = 0.3
-            animation.fromValue = rectLayer.path
-            animation.toValue = path
+          
             rectLayer.path = path
-            rectLayer.addAnimation(animation, forKey: "path")
-            
-            animation = CABasicAnimation(keyPath: "path")
-            
-            animation.duration = 1.0
-            animation.fromValue = triangleLayer.path
-            animation.toValue = triangle.path().CGPath
             triangleLayer.path = triangle.path().CGPath
-            triangleLayer.addAnimation(animation, forKey: "path")
             
             self.setNeedsDisplay()
         }

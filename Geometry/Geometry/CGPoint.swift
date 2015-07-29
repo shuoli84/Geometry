@@ -20,8 +20,8 @@ public extension CGPoint {
         }).0!
     }
     
-    func rounded(unit: CGFloat = 0) -> CGPoint {
-        return CGPointMake(round(x), round(y))
+    func rounded(unit: CGFloat = 0.01) -> CGPoint {
+        return CGPointMake(x.roundedTo(unit), y.roundedTo(unit))
     }
 }
 

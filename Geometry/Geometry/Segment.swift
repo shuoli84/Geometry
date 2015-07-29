@@ -22,6 +22,19 @@ public struct Segment: Printable {
         }
     }
     
+    public var angle: CGFloat {
+        get {
+            return atan2(p2.y - p1.y, p2.x - p1.x)
+        }
+    }
+    
+    public func path() -> UIBezierPath {
+        var path = UIBezierPath()
+        path.moveToPoint(p1)
+        path.addLineToPoint(p2)
+        return path
+    }
+    
     public func project(point: CGPoint) -> CGPoint {
         let x1 = p1.x, y1 = p1.y
         let x2 = p2.x, y2 = p2.y
@@ -97,7 +110,6 @@ public struct Segment: Printable {
         return nil
     }
     
-    // Get the point at the distance of p1
     public func pointByDistance(var distance: CGFloat, limitOnSegment: Bool = true) -> CGPoint {
         if limitOnSegment {
             distance = min(max(distance, 0), length)

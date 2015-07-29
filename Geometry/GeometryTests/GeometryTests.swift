@@ -69,6 +69,12 @@ class GeometryTests: XCTestCase {
         ad.split(c, startFromPoint: true).map { (item: Segment) in
             XCTAssertEqual(item.p1, self.c)
         }
+        
+        XCTAssertEqual(ad.angle, 0)
+        XCTAssertEqual(eo.angle, CGFloat(M_PI_4))
+        
+        let oe = Segment(p1: o, p2: e)
+        XCTAssertEqual(oe.angle, -CGFloat(M_PI_4 * 3))
     }
     
     func testRect() {
@@ -131,6 +137,11 @@ class GeometryTests: XCTestCase {
         println("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), CGPointMake(0, 15), 3))")
     }
     
+    func testCGFloat() {
+        XCTAssertEqual(CGFloat(1.234).roundedTo(0.5), 1)
+        XCTAssertEqual(CGFloat(1.234).roundedTo(0.25), 1.25)
+    }
+    
     func testCircle() {
         var circle = Circle(center: CGPointMake(5, 5), radius: 5)
         var points = circle.pointsSplitedEvenly(4)
@@ -148,5 +159,10 @@ class GeometryTests: XCTestCase {
         
         XCTAssertEqual(points[0], CGPointMake(5, 0))
         XCTAssertEqual(points[1].rounded(), CGPointMake(0, 5))
+        
+        var point = circle.closestPointTo(CGPointMake(0, 0)).rounded(unit: 0.01)
+        XCTAssertEqual(point, CGPointMake(1.46, 1.46))
+        
+        XCTAssertEqual(circle.closestPointTo(CGPointMake(0, 5)).rounded(), CGPointMake(0, 5))
     }
 }
