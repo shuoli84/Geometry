@@ -21,6 +21,8 @@
 		9C57E0901B60B622003042E4 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57E08F1B60B622003042E4 /* Triangle.swift */; };
 		9C5C2AF61B68569700392118 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C2AF51B68569700392118 /* Circle.swift */; };
 		9C5C2AF81B689D3200392118 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C2AF71B689D3200392118 /* CGFloat.swift */; };
+		9C5C2AFA1B68A73700392118 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C2AF91B68A73700392118 /* ShapeView.swift */; };
+		9C5C2AFC1B68A92000392118 /* StarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C2AFB1B68A92000392118 /* StarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		9C57E08F1B60B622003042E4 /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		9C5C2AF51B68569700392118 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		9C5C2AF71B689D3200392118 /* CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		9C5C2AF91B68A73700392118 /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
+		9C5C2AFB1B68A92000392118 /* StarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 			children = (
 				9C550B7E1B5FF9D500081FC9 /* AppDelegate.swift */,
 				9C261AE61B60DE6C00B0920B /* LabelView.swift */,
+				9C5C2AFB1B68A92000392118 /* StarViewController.swift */,
 				9C550B801B5FF9D500081FC9 /* ViewController.swift */,
 				9C550B821B5FF9D500081FC9 /* Main.storyboard */,
 				9C550B851B5FF9D500081FC9 /* Images.xcassets */,
@@ -107,6 +112,7 @@
 				9C57E08F1B60B622003042E4 /* Triangle.swift */,
 				9C5C2AF51B68569700392118 /* Circle.swift */,
 				9C5C2AF71B689D3200392118 /* CGFloat.swift */,
+				9C5C2AF91B68A73700392118 /* ShapeView.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -240,7 +246,9 @@
 				9C550BA11B606B8800081FC9 /* CGPoint.swift in Sources */,
 				9C57E08E1B6091E5003042E4 /* ChatBubble.swift in Sources */,
 				9C5C2AF61B68569700392118 /* Circle.swift in Sources */,
+				9C5C2AFC1B68A92000392118 /* StarViewController.swift in Sources */,
 				9C550B811B5FF9D500081FC9 /* ViewController.swift in Sources */,
+				9C5C2AFA1B68A73700392118 /* ShapeView.swift in Sources */,
 				9C550BA31B606BAC00081FC9 /* CGRect.swift in Sources */,
 				9C550B9F1B5FF9E900081FC9 /* Segment.swift in Sources */,
 				9C261AE71B60DE6C00B0920B /* LabelView.swift in Sources */,

@@ -2,6 +2,12 @@ import Foundation
 import UIKit
 
 public extension CGRect {
+    public var center: CGPoint {
+        get {
+            return CGPointMake(minX + width / 2, minY + height / 2)
+        }
+    }
+    
     public var topLeft: CGPoint {
         get {
             return CGPointMake(minX, minY)

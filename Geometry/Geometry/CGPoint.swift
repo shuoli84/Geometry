@@ -32,3 +32,18 @@ extension CGPoint: Printable {
         }
     }
 }
+
+extension UIBezierPath {
+    static func poligonByPoints(points: [CGPoint]) -> UIBezierPath {
+        var path = UIBezierPath()
+        
+        if points.count == 0 {
+            return path
+        }
+        
+        path.moveToPoint(points[0])
+        points[1..<points.endIndex].map { path.addLineToPoint($0) }
+        path.closePath()
+        return path
+    }
+}
