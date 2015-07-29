@@ -22,6 +22,9 @@ path = UIBezierPath.poligonByPoints(reorderedPoints) // Now the path is a star
 
 CGPoint
 ---
+
+| name | def | description |
+| ------------- | ----------- | ---------- |
 | distance | func distance(anotherPoint: CGPoint) -> CGFloat | Return the distance between current point and anotherPoint |
 | closestPoint | func closestPoint(points: [CGPoint]) -> CGPoint | Return the closest point |
 | pointByRotate | func pointByRotate(center: CGPoint, angle: CGFloat) -> CGPoint | Return the point rotated around center |
@@ -31,6 +34,8 @@ Segment
 ---
 Segment is defined by two points. 
 
+| name | def | description |
+| ------------- | ----------- | ---------- |
 | init | init(p1: CGPoint, p2: CGPoint) ||
 | length | var length: CGFloat | Length of the segment |
 | angle | var angle: CGFloat | Angle of the segment. Segment((0, 0), (1, 1)).angle = - PI/4 |
