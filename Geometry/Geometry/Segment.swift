@@ -132,4 +132,8 @@ public struct Segment: Printable {
         }
         return []
     }
+    
+    public func segmentByRotate(point: CGPoint, angle: CGFloat) -> Segment {
+        return Segment(p1: p1.pointByRotate(point, angle: angle), p2: p2.pointByRotate(point, angle: angle))
+    }
 }

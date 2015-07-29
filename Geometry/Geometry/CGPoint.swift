@@ -2,11 +2,12 @@ import Foundation
 import UIKit
 
 public extension CGPoint {
-    func distance(point: CGPoint) -> CGFloat {
+    @inline(__always)
+    public func distance(point: CGPoint) -> CGFloat {
         return sqrt((point.y - y) * (point.y - y) + (point.x - x) * (point.x - x))
     }
     
-    func closestPoint(points: [CGPoint]) -> CGPoint? {
+    public func closestPoint(points: [CGPoint]) -> CGPoint? {
         if points.count == 0 {
             return nil
         }
@@ -20,7 +21,23 @@ public extension CGPoint {
         }).0!
     }
     
-    func rounded(unit: CGFloat = 0.01) -> CGPoint {
+    public func pointByRotate(center: CGPoint, angle: CGFloat) -> CGPoint {
+        return pointByTranslate(-center.x, y: -center.y).pointByRotateAroundOrigin(angle).pointByTranslate(center.x, y: center.y)
+    }
+    
+    @inline(__always)
+    public func pointByTranslate(x: CGFloat, y: CGFloat) -> CGPoint {
+        return CGPointMake(self.x + x, self.y + y)
+    }
+    
+    public func pointByRotateAroundOrigin(angle: CGFloat) -> CGPoint {
+        let currentAngle = atan2(self.y, self.x)
+        let newAngle = currentAngle + angle
+        let distance = self.distance(CGPointZero)
+        return CGPointMake(distance * cos(newAngle), distance * sin(newAngle))
+    }
+    
+    public func rounded(unit: CGFloat = 0.01) -> CGPoint {
         return CGPointMake(x.roundedTo(unit), y.roundedTo(unit))
     }
 }

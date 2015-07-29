@@ -32,6 +32,12 @@ class GeometryTests: XCTestCase {
     let o = CGPointMake(20, 30)
     let p = CGPointMake(30, 30)
     
+    func testPoint() {
+        println("\(c.pointByRotateAroundOrigin(CGFloat(M_PI_2)).rounded(unit: 0.1))")
+        var point = c.pointByRotate(b, angle: CGFloat(M_PI_2))
+        XCTAssertEqual(point, f)
+    }
+    
     func testSegment() {
         var s = Segment(p1: CGPointMake(0, 0), p2: CGPointMake(10, 0))
         XCTAssertEqual(s.project(CGPointMake(0, 10)), CGPointMake(0, 0))
@@ -75,6 +81,8 @@ class GeometryTests: XCTestCase {
         
         let oe = Segment(p1: o, p2: e)
         XCTAssertEqual(oe.angle, -CGFloat(M_PI_4 * 3))
+        
+        XCTAssert(oe.segmentByRotate(o, angle: CGFloat(M_PI_4)).contains(k))
     }
     
     func testRect() {
