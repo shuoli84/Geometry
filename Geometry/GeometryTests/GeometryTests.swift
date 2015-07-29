@@ -130,4 +130,23 @@ class GeometryTests: XCTestCase {
         println("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), h, 3))")
         println("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), CGPointMake(0, 15), 3))")
     }
+    
+    func testCircle() {
+        var circle = Circle(center: CGPointMake(5, 5), radius: 5)
+        var points = circle.pointsSplitedEvenly(4)
+        
+        XCTAssertEqual(points.count, 4)
+        XCTAssertEqual(points[0], CGPointMake(10, 5))
+        XCTAssertEqual(points[1], CGPointMake(5, 10))
+        
+        points = circle.pointsSplitedEvenly(4, startAngle: CGFloat(-M_PI_2))
+        
+        XCTAssertEqual(points[0], CGPointMake(5, 0))
+        XCTAssertEqual(points[1], CGPointMake(10, 5))
+      
+        points = circle.pointsSplitedEvenly(4, startAngle: CGFloat(-M_PI_2), clockWise: false)
+        
+        XCTAssertEqual(points[0], CGPointMake(5, 0))
+        XCTAssertEqual(points[1].rounded(), CGPointMake(0, 5))
+    }
 }

@@ -19,6 +19,7 @@
 		9C550BA31B606BAC00081FC9 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C550BA21B606BAC00081FC9 /* CGRect.swift */; };
 		9C57E08E1B6091E5003042E4 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57E08D1B6091E5003042E4 /* ChatBubble.swift */; };
 		9C57E0901B60B622003042E4 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C57E08F1B60B622003042E4 /* Triangle.swift */; };
+		9C5C2AF61B68569700392118 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C2AF51B68569700392118 /* Circle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		9C550BA21B606BAC00081FC9 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		9C57E08D1B6091E5003042E4 /* ChatBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		9C57E08F1B60B622003042E4 /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		9C5C2AF51B68569700392118 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				9C550BA21B606BAC00081FC9 /* CGRect.swift */,
 				9C57E08D1B6091E5003042E4 /* ChatBubble.swift */,
 				9C57E08F1B60B622003042E4 /* Triangle.swift */,
+				9C5C2AF51B68569700392118 /* Circle.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			files = (
 				9C550BA11B606B8800081FC9 /* CGPoint.swift in Sources */,
 				9C57E08E1B6091E5003042E4 /* ChatBubble.swift in Sources */,
+				9C5C2AF61B68569700392118 /* Circle.swift in Sources */,
 				9C550B811B5FF9D500081FC9 /* ViewController.swift in Sources */,
 				9C550BA31B606BAC00081FC9 /* CGRect.swift in Sources */,
 				9C550B9F1B5FF9E900081FC9 /* Segment.swift in Sources */,
