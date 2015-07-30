@@ -46,6 +46,52 @@ Segment is defined by two points.
 | segmentByDistance | func segmentByDistance(distance: CGFloat, offset: CGFloat) -> Segment | Get the sub segement which has length of distance |
 | segmentByRotate | func segmentByRotate(point: CGPoint, angle: CGFloat) -> Segment | Get the segment rotated around center by angle |
 
+CGRect
+---
+Extension functions for CGRect
+
+| name | def | description |
+| ------------- | ----------- | ---------- |
+| center, topLeft, bottomLeft, topRight, bottomRight | CGPoint | Some special point for CGRect |
+| leftSegment, rightSegment, topSegment, bottomSegment | Segment | Four segment for Rect |
+| closestpoint | func closestpoint(point: CGPoint) -> CGPoint | Get the cloest point to argument on rect |
+| project | func project(point: CGPoint) -> CGPoint? | Get point projected to rect |
+| segemntsContainsPoint | func segmentsContainsPoint(point: CGPoint) -> [Segment] | Get all segements containing the point |
+
+Circle
+---
+Circle is defined by center and radius
+
+| name | def | description |
+| ------------- | ----------- | ---------- |
+| area | var area: CGFloat | The area of circle |
+| pointsSplitedEvenly | func pointsSplitedEvently(count: Int, startAngle: CGFloat, clockwise: Bool) -> [CGPoint] | Get all points split evenly by count|
+| cloestPointTo | func cloestPointTo(point: CGPoint) -> CGPoint | Get the cloest point to argumented point |
+| pointAtAngle | func pointAtAngle(angle: CGFloat) -> CGPoint | Get the point at angle on circle |
+
+Arc
+---
+Arc is defined by a circle, start, end angle and clockwise.
+
+| name | def | description |
+| ------------- | ----------- | ---------- |
+| startPoint, endPoint | CGPoint | The points for start and end |
+| edgeSegments | func edgeSegments() -> (Segment, Segment) | Two segments from circle's center to start point and end point |
+| cloestPointTo | func cloestPointTo(point: CGPoint) -> CGPoint | Get the cloest point to argumented point |
+
+Pie
+---
+Pie is defined by Arc
+
+| name | def | description |
+| ------------- | ----------- | ---------- |
+| TBD | | |
+
+Triangle
+---
+Triangle is defined by three points
+
+
 License
 ---
 MIT
