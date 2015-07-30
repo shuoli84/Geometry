@@ -173,4 +173,31 @@ class GeometryTests: XCTestCase {
         
         XCTAssertEqual(circle.closestPointTo(CGPointMake(0, 5)).rounded(), CGPointMake(0, 5))
     }
+    
+    func testArc() {
+        var circle = Circle(center: CGPointMake(5, 5), radius: 5)
+        var arc = Arc(circle: circle, start: 0, end: CGFloat(M_PI_4), clockwise: true)
+        
+        XCTAssertEqual(arc.closestPointTo(CGPointMake(6, 5)), CGPointMake(10, 5))
+        
+        var pie = Pie(arc: arc)
+        XCTAssertEqual(pie.cloestPoint(CGPointMake(6, 5)), CGPointMake(6, 5))
+    }
+    
+    func testAngle() {
+        XCTAssertEqual(angleNormalizeToZeroToTwoPI(CGFloat(-M_PI * 7.0 / 4.0)), CGFloat(M_PI / 4))
+        XCTAssertEqual(angleNormalizeToZeroToTwoPI(CGFloat(M_PI / 4.0)), CGFloat(M_PI / 4))
+        
+        XCTAssert(angleBetweenAngles(0, CGFloat(-M_PI / 4), CGFloat(M_PI / 4), true))
+        XCTAssertFalse(angleBetweenAngles(0, CGFloat(M_PI / 4), CGFloat(-M_PI / 4), true))
+        
+        XCTAssertFalse(angleBetweenAngles(0, CGFloat(-M_PI / 4), CGFloat(M_PI / 4), false))
+        XCTAssert(angleBetweenAngles(0, CGFloat(M_PI / 4), CGFloat(-M_PI / 4), false))
+        
+        XCTAssert(angleBetweenAngles(0, CGFloat(-M_PI * 9 / 4), CGFloat(M_PI / 4), true))
+        XCTAssertFalse(angleBetweenAngles(0, CGFloat(M_PI * 9 / 4), CGFloat(-M_PI / 4), true))
+        
+        XCTAssertFalse(angleBetweenAngles(0, CGFloat(-M_PI * 9 / 4), CGFloat(M_PI / 4), false))
+        XCTAssert(angleBetweenAngles(0, CGFloat(M_PI * 9 / 4), CGFloat(-M_PI / 4), false))
+    }
 }

@@ -49,9 +49,13 @@ public struct Circle: Printable {
     
     public func closestPointTo(point: CGPoint) -> CGPoint {
         if point.distance(center) <= radius {
-            return point
+            return pointAtAngle(Segment(center, point).angle)
         }
         
         return Segment(p1: center, p2: point).pointByDistance(radius, limitOnSegment: true)
+    }
+    
+    public func pointAtAngle(angle: CGFloat) -> CGPoint {
+        return CGPointMake(center.x + radius * cos(angle), center.y + sin(angle))
     }
 }

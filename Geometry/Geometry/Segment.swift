@@ -16,6 +16,11 @@ public struct Segment: Printable {
         self.p2 = p2
     }
     
+    public init(_ p1: CGPoint, _ p2: CGPoint) {
+        self.p1 = p1
+        self.p2 = p2
+    }
+    
     public var length: CGFloat {
         get {
             return p1.distance(p2)
@@ -56,6 +61,18 @@ public struct Segment: Printable {
         }
         
         return result
+    }
+    
+    public func closestPoint(point: CGPoint) -> CGPoint {
+        let projectedPoint = project(point)
+        if contains(projectedPoint) {
+            return projectedPoint
+        }
+        
+        let d1 = point.distance(p1)
+        let d2 = point.distance(p2)
+        
+        return d1 <= d2 ? p1 : p2
     }
     
     public func contains(point: CGPoint) -> Bool {
