@@ -33,8 +33,8 @@ class GeometryTests: XCTestCase {
     let p = CGPointMake(30, 30)
     
     func testPoint() {
-        println("\(c.pointByRotateAroundOrigin(CGFloat(M_PI_2)).rounded(unit: 0.1))")
-        var point = c.pointByRotate(b, angle: CGFloat(M_PI_2))
+        print("\(c.pointByRotateAroundOrigin(CGFloat(M_PI_2)).rounded(0.1))")
+        let point = c.pointByRotate(b, angle: CGFloat(M_PI_2))
         XCTAssertEqual(point, f)
     }
     
@@ -116,8 +116,8 @@ class GeometryTests: XCTestCase {
         // m n o p
         
         let t = Triangle(p1: a, p2: i, p3: h)
-        println("\([a.distance(i), i.distance(h), h.distance(a))")
-        println("\(t.perimeter)")
+        print("\([a.distance(i), i.distance(h), h.distance(a))")
+        print("\(t.perimeter)")
         XCTAssertTrue(abs(t.area - 300) < 0.000001)
     }
     
@@ -127,22 +127,22 @@ class GeometryTests: XCTestCase {
         // i j k l
         // m n o p
      
-        println("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), a, 5))")
-        println("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), b, 5))")
-        println("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), c, 5))")
-        println("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), d, 5))")
-        println("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), h, 5))")
+        print("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), point: a, height: 5))")
+        print("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), point: b, height: 5))")
+        print("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), point: c, height: 5))")
+        print("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), point: d, height: 5))")
+        print("\(bubbleTailSegment(CGRectMake(10, 10, 10, 10), point: h, height: 5))")
         
-        println("*****************************************************")
-        println("*****************************************************")
-        println("*****************************************************")
+        print("*****************************************************")
+        print("*****************************************************")
+        print("*****************************************************")
         
-        println("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), a, 3))")
-        println("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), b, 3))")
-        println("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), c, 3))")
-        println("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), d, 3))")
-        println("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), h, 3))")
-        println("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), CGPointMake(0, 15), 3))")
+        print("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), point: a, height: 3))")
+        print("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), point: b, height: 3))")
+        print("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), point: c, height: 3))")
+        print("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), point: d, height: 3))")
+        print("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), point: h, height: 3))")
+        print("\(tailTriangleForBubble(CGRectMake(10, 10, 10, 10), point: CGPointMake(0, 15), height: 3))")
     }
     
     func testCGFloat() {
@@ -168,19 +168,19 @@ class GeometryTests: XCTestCase {
         XCTAssertEqual(points[0], CGPointMake(5, 0))
         XCTAssertEqual(points[1].rounded(), CGPointMake(0, 5))
         
-        var point = circle.closestPointTo(CGPointMake(0, 0)).rounded(unit: 0.01)
+        var point = circle.closestPointTo(CGPointMake(0, 0)).rounded(0.01)
         XCTAssertEqual(point, CGPointMake(1.46, 1.46))
         
         XCTAssertEqual(circle.closestPointTo(CGPointMake(0, 5)).rounded(), CGPointMake(0, 5))
     }
     
     func testArc() {
-        var circle = Circle(center: CGPointMake(5, 5), radius: 5)
-        var arc = Arc(circle: circle, start: 0, end: CGFloat(M_PI_4), clockwise: true)
+        let circle = Circle(center: CGPointMake(5, 5), radius: 5)
+        let arc = Arc(circle: circle, start: 0, end: CGFloat(M_PI_4), clockwise: true)
         
         XCTAssertEqual(arc.closestPointTo(CGPointMake(6, 5)), CGPointMake(10, 5))
         
-        var pie = Pie(arc: arc)
+        let pie = Pie(arc: arc)
         XCTAssertEqual(pie.cloestPoint(CGPointMake(6, 5)), CGPointMake(6, 5))
     }
     
@@ -188,16 +188,16 @@ class GeometryTests: XCTestCase {
         XCTAssertEqual(angleNormalizeToZeroToTwoPI(CGFloat(-M_PI * 7.0 / 4.0)), CGFloat(M_PI / 4))
         XCTAssertEqual(angleNormalizeToZeroToTwoPI(CGFloat(M_PI / 4.0)), CGFloat(M_PI / 4))
         
-        XCTAssert(angleBetweenAngles(0, CGFloat(-M_PI / 4), CGFloat(M_PI / 4), true))
-        XCTAssertFalse(angleBetweenAngles(0, CGFloat(M_PI / 4), CGFloat(-M_PI / 4), true))
+        XCTAssert(angleBetweenAngles(0, start: CGFloat(-M_PI / 4), end: CGFloat(M_PI / 4), clockwise: true))
+        XCTAssertFalse(angleBetweenAngles(0, start: CGFloat(M_PI / 4), end: CGFloat(-M_PI / 4), clockwise: true))
         
-        XCTAssertFalse(angleBetweenAngles(0, CGFloat(-M_PI / 4), CGFloat(M_PI / 4), false))
-        XCTAssert(angleBetweenAngles(0, CGFloat(M_PI / 4), CGFloat(-M_PI / 4), false))
+        XCTAssertFalse(angleBetweenAngles(0, start: CGFloat(-M_PI / 4), end: CGFloat(M_PI / 4), clockwise: false))
+        XCTAssert(angleBetweenAngles(0, start: CGFloat(M_PI / 4), end: CGFloat(-M_PI / 4), clockwise: false))
         
-        XCTAssert(angleBetweenAngles(0, CGFloat(-M_PI * 9 / 4), CGFloat(M_PI / 4), true))
-        XCTAssertFalse(angleBetweenAngles(0, CGFloat(M_PI * 9 / 4), CGFloat(-M_PI / 4), true))
+        XCTAssert(angleBetweenAngles(0, start: CGFloat(-M_PI * 9 / 4), end: CGFloat(M_PI / 4), clockwise: true))
+        XCTAssertFalse(angleBetweenAngles(0, start: CGFloat(M_PI * 9 / 4), end: CGFloat(-M_PI / 4), clockwise: true))
         
-        XCTAssertFalse(angleBetweenAngles(0, CGFloat(-M_PI * 9 / 4), CGFloat(M_PI / 4), false))
-        XCTAssert(angleBetweenAngles(0, CGFloat(M_PI * 9 / 4), CGFloat(-M_PI / 4), false))
+        XCTAssertFalse(angleBetweenAngles(0, start: CGFloat(-M_PI * 9 / 4), end: CGFloat(M_PI / 4), clockwise: false))
+        XCTAssert(angleBetweenAngles(0, start: CGFloat(M_PI * 9 / 4), end: CGFloat(-M_PI / 4), clockwise: false))
     }
 }

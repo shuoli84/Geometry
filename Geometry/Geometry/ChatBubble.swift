@@ -14,7 +14,7 @@ public func bubbleTailSegment(rect: CGRect, point: CGPoint, height: CGFloat ) ->
 
 public func tailTriangleForBubble(rect: CGRect, point: CGPoint, height: CGFloat) -> Triangle {
     let distance: CGFloat = height / sqrt(3)
-    let tailSegment = bubbleTailSegment(rect, point, height)
+    let tailSegment = bubbleTailSegment(rect, point: point, height: height)
     // p1 of the segment are on rect
     let pointOnRect = tailSegment.p1
     let segments = rect.segmentsContainsPoint(pointOnRect)

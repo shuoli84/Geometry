@@ -20,7 +20,7 @@ class StarViewController: UIViewController {
         let points = circle.pointsSplitedEvenly(5, startAngle: Segment(p1: center, p2: location).angle, clockWise: true)
         let step = 2
         
-        let orderedPoints = indices(points).map {points[$0 * step % points.count]}
+        let orderedPoints = points.indices.map {points[$0 * step % points.count]}
         
         shapeView.path = UIBezierPath.poligonByPoints(orderedPoints)
     }

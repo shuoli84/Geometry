@@ -17,7 +17,7 @@ class LabelView: UIView {
     var rectLayer = CAShapeLayer()
     var triangleLayer = CAShapeLayer()
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         setupLayer()
@@ -38,7 +38,7 @@ class LabelView: UIView {
     }
    
     override func drawRect(rect: CGRect) {
-        var context = UIGraphicsGetCurrentContext()
+        let context = UIGraphicsGetCurrentContext()
         CGContextSetFillColorWithColor(context, UIColor.grayColor().CGColor)
         UIBezierPath(rect: self.bounds).fill()
       
@@ -46,15 +46,15 @@ class LabelView: UIView {
         UIBezierPath(ovalInRect: CGRectMake(point.x - 2, point.y - 2, 4, 4)).fill()
     }
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let t = touches.first as? UITouch {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let t = touches.first {
             var p = t.locationInView(self)
             p.y = p.y - 40
             
             point = p
-            labelRect = positionRectInRectCloseToPoint(labelRect, self.bounds, point, 100, 10)
+            labelRect = positionRectInRectCloseToPoint(labelRect, containerRect: self.bounds, point: point, margin: 100, space: 10)
             
-            let triangle = tailTriangleForBubble(labelRect, point, 10)
+            let triangle = tailTriangleForBubble(labelRect, point: point, height: 10)
            
             let path = UIBezierPath(rect: labelRect).CGPath
           

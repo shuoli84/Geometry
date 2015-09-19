@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-public struct Triangle: Printable {
+public struct Triangle: CustomStringConvertible {
     public var p1: CGPoint
     public var p2: CGPoint
     public var p3: CGPoint
@@ -13,7 +13,7 @@ public struct Triangle: Printable {
     }
     
     public func path() -> UIBezierPath {
-        var p = UIBezierPath()
+        let p = UIBezierPath()
         p.moveToPoint(p1)
         p.addLineToPoint(p2)
         p.addLineToPoint(p3)

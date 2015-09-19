@@ -42,7 +42,7 @@ public extension CGPoint {
     }
 }
 
-extension CGPoint: Printable {
+extension CGPoint: CustomStringConvertible {
     public var description: String {
         get {
             return NSStringFromCGPoint(self)
@@ -52,14 +52,14 @@ extension CGPoint: Printable {
 
 extension UIBezierPath {
     static func poligonByPoints(points: [CGPoint]) -> UIBezierPath {
-        var path = UIBezierPath()
+        let path = UIBezierPath()
         
         if points.count == 0 {
             return path
         }
         
         path.moveToPoint(points[0])
-        points[1..<points.endIndex].map { path.addLineToPoint($0) }
+        Array(points[1..<points.endIndex].map { path.addLineToPoint($0) })
         path.closePath()
         return path
     }

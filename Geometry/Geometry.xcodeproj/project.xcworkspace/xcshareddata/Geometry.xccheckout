@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>1A793C28-9FA3-47D8-A6A8-91FAC3398D4D</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Geometry</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>501EB052AEB5833F4E7520E691204AA177C7FC1F</key>
 		<string>github.com:shuoli84/Geometry.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Geometry/Geometry.xcodeproj</string>
+	<string>Geometry/Geometry.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>501EB052AEB5833F4E7520E691204AA177C7FC1F</key>

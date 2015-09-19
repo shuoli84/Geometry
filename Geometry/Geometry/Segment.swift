@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-public struct Segment: Printable {
+public struct Segment: CustomStringConvertible {
     public var p1: CGPoint
     public var p2: CGPoint
     
@@ -34,7 +34,7 @@ public struct Segment: Printable {
     }
     
     public func path() -> UIBezierPath {
-        var path = UIBezierPath()
+        let path = UIBezierPath()
         path.moveToPoint(p1)
         path.addLineToPoint(p2)
         return path

@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-public struct Circle: Printable {
+public struct Circle: CustomStringConvertible {
     public var center: CGPoint
     public var radius: CGFloat
     

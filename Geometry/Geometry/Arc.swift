@@ -40,14 +40,14 @@ public struct Arc {
     }
     
     public func path() -> UIBezierPath {
-        var path = UIBezierPath(arcCenter: circle.center, radius: circle.radius, startAngle: start, endAngle: end, clockwise: clockwise)
+        let path = UIBezierPath(arcCenter: circle.center, radius: circle.radius, startAngle: start, endAngle: end, clockwise: clockwise)
         return path
     }
     
     public func closestPointTo(point: CGPoint) -> CGPoint {
         let pointAngle = Segment(circle.center, point).angle
             
-        if angleBetweenAngles(pointAngle, start, end, clockwise) {
+        if angleBetweenAngles(pointAngle, start: start, end: end, clockwise: clockwise) {
             return circle.closestPointTo(point)
         }
         
@@ -67,7 +67,7 @@ public func angleBetweenAngles(angle: CGFloat, start: CGFloat, end: CGFloat, clo
 }
 
 public func angleNormalizeToZeroToTwoPI(angle: CGFloat) -> CGFloat {
-    var result = angle % CGFloat(M_PI * 2)
+    let result = angle % CGFloat(M_PI * 2)
     return result < 0 ? result + CGFloat(2 * M_PI) : result
 }
 
@@ -86,7 +86,7 @@ public struct Pie {
     }
     
     public func path() -> UIBezierPath {
-        var path = UIBezierPath()
+        let path = UIBezierPath()
         
         path.moveToPoint(arc.circle.center)
         path.addLineToPoint(arc.circle.pointAtAngle(arc.start))

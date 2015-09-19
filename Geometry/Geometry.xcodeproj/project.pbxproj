@@ -101,6 +101,7 @@
 			children = (
 				9C550B7E1B5FF9D500081FC9 /* AppDelegate.swift */,
 				9C261AE61B60DE6C00B0920B /* LabelView.swift */,
+				9C5C2AF91B68A73700392118 /* ShapeView.swift */,
 				9C5C2AFB1B68A92000392118 /* StarViewController.swift */,
 				9C550B801B5FF9D500081FC9 /* ViewController.swift */,
 				9C550B821B5FF9D500081FC9 /* Main.storyboard */,
@@ -113,9 +114,8 @@
 				9C57E08D1B6091E5003042E4 /* ChatBubble.swift */,
 				9C57E08F1B60B622003042E4 /* Triangle.swift */,
 				9C5C2AF51B68569700392118 /* Circle.swift */,
-				9C5C2AF71B689D3200392118 /* CGFloat.swift */,
-				9C5C2AF91B68A73700392118 /* ShapeView.swift */,
 				9C5C2B2D1B68FAE500392118 /* Arc.swift */,
+				9C5C2AF71B689D3200392118 /* CGFloat.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -189,6 +189,8 @@
 		9C550B711B5FF9D500081FC9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = LiShuo;
 				TargetAttributes = {
